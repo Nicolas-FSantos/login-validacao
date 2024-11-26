@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-
+import styled, { css } from 'styled-components';
 
 export const ButtonContainer = styled.button`
     width: 100%;
@@ -14,4 +13,15 @@ export const ButtonContainer = styled.button`
         opacity: 0.6;
         cursor:pointer;
     }
+
+    ${
+
+        ({disabled}) => disabled === true && css `
+            opacity: 0.6;
+            &:hover {
+            cursor: default;
+        }
+
+        `
+    };
 `

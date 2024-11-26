@@ -17,6 +17,11 @@ const schema = yup
   })
   .required();
 
+
+const clickButton = () =>{
+  console.log('Validation. Button enabled. Form submited.')
+}
+
 const Login = () => {
   const {
     control,
@@ -49,7 +54,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button title="Entrar" disabled={!isValid} onClick={clickButton}/>
         </Column>
       </LoginContainer>
     </Container>
